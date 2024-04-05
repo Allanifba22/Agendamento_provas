@@ -8,6 +8,4 @@ import main.root.model.Professor;
 //import java.util.List;
 
 @Repository
-public interface ProfessorRepository extends JpaRepository<Professor, Long>{
-//    Professor addProfessor(Professor professor);
-}
+public interface ProfessorRepository extends JpaRepository<Professor, Long>{}

@@ -10,9 +10,9 @@ public class Professor {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	long id;
-	
+
 	String nome;
-	
+
 	public Professor() {
 	}
 

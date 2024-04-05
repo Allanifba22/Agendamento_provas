@@ -31,8 +31,9 @@ public class ProfessorController {
     
     @PostMapping
     public ResponseEntity<Professor> salvarProfessor(@RequestBody Professor professor) {
-        Professor novoProfessor = professorService.addProfessor(professor);
-        if (novoProfessor != null) {
+		Professor novoProfessor = professorService.addProfessor(professor);
+		
+		if (novoProfessor != null) {
             return ResponseEntity.status(HttpStatus.CREATED).body(novoProfessor);
         } else {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -40,7 +41,7 @@ public class ProfessorController {
     }
     
     @GetMapping
-    public List<Professor> getProfessor() {
+    public List<Professor> getAllProfessor() {
     	List<Professor> listaProfessores = professorService.listarProfessores();
     	for (Professor p : listaProfessores){
     		System.out.println(p.getNome());
@@ -49,7 +50,7 @@ public class ProfessorController {
     }
     
     @GetMapping("/{id}")
-    public Optional<Professor> getProfessor(@PathVariable Long id) {
+    public Optional<Professor> getProfessorById(@PathVariable Long id) {
     	return professorService.find_by_id(id);
     }
 
